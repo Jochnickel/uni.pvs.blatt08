@@ -1,0 +1,8 @@
+Aufgabe 1.1
+
+SELECT *
+FROM LIEFERANTEN
+WHERE LIEFSTADT!='München'
+
+Aufgabe 1.2
+
