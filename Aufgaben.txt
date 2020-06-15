@@ -6,3 +6,44 @@ WHERE LIEFSTADT!='München'
 
 Aufgabe 1.2
 
+SELECT DISTINCT TEILENR
+FROM LIEFERT
+
+Aufgabe 1.3
+
+SELECT Farbe, TeileNr, Preis
+FROM Preisliste
+WHERE Preis>300 and Preis<430
+
+Aufgabe 1.4
+
+SELECT *
+FROM Bestellungen
+WHERE BestDatum 
+BETWEEN '2013-02-15' AND '2013-02-23'
+
+Aufgabe 1.5
+
+Select *
+FROM Kunden
+WHERE LEFT(KdStadt, 1)='S'
+
+Aufgabe 1.6
+
+SELECT *
+FROM Preisliste
+FULL JOIN Teile 
+  ON Teile.TeileNR=Preisliste.TeileNR 
+  AND Teile.Farbe=Preisliste.Farbe
+
+Aufgabe 1.7
+
+SELECT *
+FROM mitarbeiter
+WHERE funktion='Montage II'
+ORDER BY gehalt ASC
+
+Aufgabe 1.8
+
+Aufgabe 1.9
+
