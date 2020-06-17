@@ -45,8 +45,8 @@ ORDER BY gehalt ASC
 
 Aufgabe 1.8
 
-SELECT auftrnr,kdnr,auftrdatum, DATEADD('mm',3,auftrdatum) AS "Skontodatum"
-FROM auftraege
+SELECT AuftrNr, KdNr, AuftrDatum, AuftrDatum + 3 month as SkontoDatum
+FROM Auftraege
 
 Aufgabe 1.9
 
@@ -56,9 +56,9 @@ WHERE BITAND(DAY(auftrdatum),1 ) = 0
 
 Aufgabe 1.10
 
-SELECT teilenr, farbe, kalkkosten, bestand, minbestand,
-CASEWHEN((bestand<minbestand),'Mangel',
-  CASEWHEN(bestand>minbestand,'Überbestand',
-    'Mindestbestand'
-)) AS Bestandsbewertung
-FROM teile
+SELECT Teilenr, Farbe, Kalkkosten, Bestand, MinBestand,
+CASE WHEN Bestand>MinBestand THEN 'Überbestand'
+     WHEN Bestand<MinBestand THEN 'Mangel'
+                             ELSE 'Mindestbestand'
+END AS Bestandsbewertung
+FROM Teile
