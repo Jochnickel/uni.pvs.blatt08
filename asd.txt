@@ -1,0 +1,11 @@
+SELECT AuftrNr, KdNr, AuftrDatum, AuftrDatum + 3 month as SkontoDatum
+FROM Auftraege
+
+
+
+SELECT Teilenr, Farbe, Kalkkosten, Bestand, MinBestand,
+CASE WHEN Bestand>MinBestand THEN 'Überbestand'
+            WHEN Bestand<MinBestand THEN 'Mangel'
+                                                                 ELSE 'Mindestbestand'
+END AS Bestandsbewertung
+FROM Teile
